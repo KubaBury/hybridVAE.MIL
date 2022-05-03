@@ -1,6 +1,7 @@
 # hybridVAE.jl
 
-This repository contains all the scripts and data sets that were used to write the thesis.
+This repository contains all the scripts written in Julia programming language for master's thesis. MIL data sets, that were used, are also included 
+in the first four files, i.e., Fox, Musk1, Musk2, and Tiger.
 
 ### Datasets
 The data sets that were used are contained in the first four files, i.e. Fox, Musk1, Musk2 and Tiger.
