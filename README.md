@@ -1,10 +1,8 @@
 # hybridVAE.jl
 
 This repository contains all the scripts written in Julia programming language for master's thesis. MIL data sets, that were used, are also included 
-in the first four files, i.e., Fox, Musk1, Musk2, and Tiger.
+in the first four files, i.e., Fox, Musk1, Musk2, and Tiger. The following is a simple description of the individual scripts.
 
-### Datasets
-The data sets that were used are contained in the first four files, i.e. Fox, Musk1, Musk2 and Tiger.
 
 ### CV_MIL.jl
 performs CV either discriminatively, or via hybrid approach
