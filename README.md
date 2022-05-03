@@ -21,7 +21,7 @@ tests the hybrid VAE aprroach for synthetic nmoons data
 computes AUC-ROC for MIL using hybridVAE
 
 ### hybrid_vs_discr_MIL.jl
-computes AUC--ROC for MIL using hybrid or discriminative method
+computes AUC-ROC for MIL using hybrid or discriminative method
 
 ### NCE_binary_gauss.jl
 estimates the 1D gaussian distribution using noise contrastive esimation
