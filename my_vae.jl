@@ -33,7 +33,7 @@ z(μ, logσ) = μ .+ exp.(logσ) .* randn(size(μ))
 KL(μ, logσ) = 0.5 * sum((exp.(logσ)).^2 .+ μ.^2 .- 1.0 .- 2. *logσ)
 
 
-s = 0.2
+s = 0.2 #weight for KL
 function loss(x)
     HID = encoder(x)
     zsample = z(μ(HID),logσ(HID))
@@ -41,12 +41,13 @@ function loss(x)
     return L
 end
 
+#train
 ps = Flux.params(A, μ, logσ, f)
 da = Iterators.repeated((x,),10000)
 opt = Flux.ADAM()
 Flux.train!(loss,ps,da,opt);
 #println(loss([x y]'))
-
+#test
 Zs=randn(nz,p)
 Xg=f(Zs) 
 #Zg=g([x y]')
@@ -57,6 +58,8 @@ Xg=f(Zs)
 #plt(x1,x2) = pdf(MvNormal([2,2], [3 2; 2 3]), [x1,x2])
 #plt2(x1,x2) = pdf.(MvNormal(mean(f(z(μ(encoder(x[:,1])),exp.(logσ(encoder(x[:,1]))))), dims=2)[:],[1 0; 0 1]), [x1,x2])
 
+
+#visualize
 gr()
 #c1=contour(-2.:0.01:6.2, -2.:0.01:6.2, (x1,x2)->plt(x1,x2), linewidth=1, legendfontsize=30,yguidefontsize=20, xguidefontsize=20,
 #xtickfontsize=20,ytickfontsize=20,levels=6,alpha=0.8,c =:blues,colorbar=false,lw=5)
